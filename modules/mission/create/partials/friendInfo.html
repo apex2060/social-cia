@@ -1,0 +1,85 @@
+<h2>Friend Info</h2>
+<form class="form-horizontal" role="form" ng-submit="tools.mission.save('friend', mission)">
+	<div class="form-group">
+		<label for="friendFirstName" class="col-sm-2 control-label">First Name</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="friendFirstName" placeholder="First Name" ng-model="mission.friend.firstName">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="friendLastName" class="col-sm-2 control-label">Last Name</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="friendLastName" placeholder="Last Name" ng-model="mission.friend.lastName">
+		</div>
+	</div>
+	<hr>
+	<h3>Contact</h3>
+	<div class="form-group">
+		<label for="friendPhone" class="col-sm-2 control-label">Phone</label>
+		<div class="col-sm-10">
+			<input type="tel" class="form-control" id="friendPhone" placeholder="Phone" ng-model="mission.friend.phone">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="friendEmail" class="col-sm-2 control-label">Email</label>
+		<div class="col-sm-10">
+			<input type="email" class="form-control" id="friendEmail" placeholder="Email" ng-model="mission.friend.email">
+		</div>
+	</div>
+	<hr>
+	<div class="form-group">
+		<label for="friendCity" class="col-sm-2 control-label">City</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="friendCity" placeholder="City" ng-model="mission.friend.address.city">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="friendState" class="col-sm-2 control-label">State</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="friendState" placeholder="State" ng-model="mission.friend.address.state">
+		</div>
+	</div>
+	<!-- Geo Location -->
+	<hr>
+	<h3>Profile</h3>
+	<div class="form-group">
+		<label for="friendBirthday" class="col-sm-2 control-label">Birthday</label>
+		<div class="col-sm-10">
+			<input type="date" class="form-control" id="friendBirthday" placeholder="Birthday" ng-model="mission.friend.birthday">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="friendBio" class="col-sm-2 control-label">Bio</label>
+		<div class="col-sm-10">
+			<textarea class="form-control" id="friendBio" placeholder="Bio" ng-model="mission.friend.age"></textarea>
+		</div>
+	</div>
+	
+	<div media-manager="tools.friend.picProfile" class="media-manager" max-width="1200" max-height="1200">
+		<div ng-hide="mission.friend.picProfile" class="thumbnail">Profile Pic</div>
+		<img id="friendPicProfile" ng-show="mission.friend.picProfile" class="thumbnail fit" 
+		ng-class="mission.friend.picProfile.class" 
+		ng-src="{{mission.friend.picProfile.src}}" 
+		title="{{mission.friend.picProfile.name}}">
+		<span class="clearfix" ng-show="mission.friend.picProfile.temp">
+			Uploading picture... This may take a while.
+		</span>
+	</div>
+
+	<div media-manager="tools.friend.picGeneral" class="media-manager" max-width="1200" max-height="1200">
+		<div ng-hide="mission.friend.picGeneral" class="thumbnail">General Pic</div>
+		<img ng-show="mission.friend.picGeneral" class="thumbnail fit" 
+		ng-class="mission.friend.picGeneral.class" 
+		ng-src="{{mission.friend.picGeneral.src}}" 
+		title="{{mission.friend.picGeneral.name}}">
+		<span class="clearfix" ng-show="mission.friend.picGeneral.temp">
+			Uploading picture... This may take a while.
+		</span>
+	</div>
+
+	<div class="form-group">
+		<div class="col-sm-offset-2 col-sm-10">
+			<button type="submit" class="btn btn-primary pull-right">Next >>></button>
+		</div>
+	</div>
+</form>	

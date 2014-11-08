@@ -1,0 +1,42 @@
+<h2>Activity Info</h2>
+<form class="form-horizontal" role="form" ng-submit="tools.mission.save('activity', mission)">
+	<div class="form-group">
+		<label for="activityChoice" class="col-sm-2 control-label">Activity</label>
+		<div class="col-sm-10">
+			<select id="activityChoice" class="form-control" 
+			ng-model="mission.activity.choice" ng-options="activity.title for activity in activities"></select>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="activityDate" class="col-sm-2 control-label">Date</label>
+		<div class="col-sm-10">
+			<input type="date" class="form-control" id="activityDate" ng-model="mission.activity.date">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="activityTime" class="col-sm-2 control-label">Time</label>
+		<div class="col-sm-10">
+			<input type="time" class="form-control" id="activityTime" ng-model="mission.activity.time">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="activityBrief" class="col-sm-2 control-label">Brief</label>
+		<div class="col-sm-10">
+			<textarea class="form-control" id="activityBrief" placeholder="Brief" ng-model="mission.activity.brief"></textarea>
+		</div>
+	</div>
+	<!-- Restaurant -->
+	<div class="form-group">
+		<div class="col-sm-offset-2 col-sm-10">
+			<button type="submit" class="btn btn-primary pull-right">Preview >>></button>
+		</div>
+	</div>
+</form>
+<!-- 
+	This needs to represent two views:
+	Scavenger 
+		- lets user enter zipcode & see if scavenger exists.
+		- allows user to select from participating restaurants.
+	Manual 
+		- lets user enter details & pictures
+ -->

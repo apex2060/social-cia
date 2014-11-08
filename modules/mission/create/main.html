@@ -1,0 +1,15 @@
+<h1>New Mission</h1>
+<div class="container" ng-controller="MissionCreateCtrl">
+	<ul class="nav nav-tabs" role="tablist" id="missionTabs">
+		<li role="presentation" class="active"><a href="#friendInfo" role="tab" data-toggle="tab">Friend Information</a></li>
+		<li role="presentation"><a href="#userInfo" role="tab" data-toggle="tab">User Information</a></li>
+		<li role="presentation"><a href="#activityInfo" role="tab" data-toggle="tab">Activity Information</a></li>
+	</ul>
+
+	<!-- Tab panes -->
+	<div class="tab-content">
+		<div role="tabpanel" class="tab-pane active" id="friendInfo" ng-include="path('friendInfo')">Friend Info</div>
+		<div role="tabpanel" class="tab-pane" id="userInfo" ng-include="path('userInfo')">User Info</div>
+		<div role="tabpanel" class="tab-pane" id="activityInfo" ng-include="path('activityInfo')">Activity Info</div>
+	</div>
+</div>

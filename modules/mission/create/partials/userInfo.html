@@ -1,0 +1,37 @@
+<h2>Your Info</h2>
+<form class="form-horizontal" role="form" ng-submit="tools.mission.save('user', mission)">
+	<h3>Profile</h3>
+	<div class="form-group">
+		<label for="userBio" class="col-sm-2 control-label">Bio</label>
+		<div class="col-sm-10">
+			<textarea class="form-control" id="userBio" placeholder="Bio" ng-model="mission.user.age"></textarea>
+		</div>
+	</div>
+
+	<div media-manager="tools.user.picProfile" class="media-manager" max-width="1200" max-height="1200">
+		<div ng-hide="mission.user.picProfile" class="thumbnail">Profile Pic</div>
+		<img ng-show="mission.user.picProfile" class="thumbnail fit" 
+		ng-class="mission.user.picProfile.class" 
+		ng-src="{{mission.user.picProfile.src}}" 
+		title="{{mission.user.picProfile.name}}">
+		<span class="clearfix" ng-show="mission.user.picProfile.temp">
+			Uploading picture... This may take a while.
+		</span>
+	</div>
+	<div media-manager="tools.user.picGeneral" class="media-manager" max-width="1200" max-height="1200">
+		<div ng-hide="mission.user.picGeneral" class="thumbnail">General Pic</div>
+		<img ng-show="mission.user.picGeneral" class="thumbnail fit" 
+		ng-class="mission.user.picGeneral.class" 
+		ng-src="{{mission.user.picGeneral.src}}" 
+		title="{{mission.user.picGeneral.name}}">
+		<span class="clearfix" ng-show="mission.user.picGeneral.temp">
+			Uploading picture... This may take a while.
+		</span>
+	</div>
+
+	<div class="form-group">
+		<div class="col-sm-offset-2 col-sm-10">
+			<button type="submit" class="btn btn-primary pull-right">Next >>></button>
+		</div>
+	</div>
+</form>	
